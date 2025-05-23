@@ -13,21 +13,27 @@
     <a href="{{ route('orders.index') }}" class="btn btn-danger">Orders by Customer (JS) method</a>
     <a href="{{ route('orders.index2') }}" class="btn btn-danger">Orders by Customer (views) method</a>
     
-    <a href="{{ route('q1') }}" class="btn btn-danger">Q1</a>
+</div>
+<div class="container mt-5 text-center">
+    <h1>Requetes elequoents</h1>
+    <div>
+        <a href="{{ route('q1') }}" class="btn btn-danger">Q1</a>
     <a href="{{ route('q2') }}" class="btn btn-danger">Q2</a>
     <a href="{{ route('q3') }}" class="btn btn-danger">Q3</a>
     <a href="{{ route('q4') }}" class="btn btn-danger">Q4</a>
     <a href="{{ route('q5') }}" class="btn btn-danger">Q5</a>
     <a href="{{ route('q6') }}" class="btn btn-danger">Q6</a>
+    </div>
 </div>
-<div>
+<div class="container mt-5 text-center">
+    <h1>Cookies et Sessions et Image upload</h1><br><br>
     <form method="POST" action="saveCookie">
         @csrf
         <h1> Hello @if(Cookie::has("UserName")) {{Cookie::get("UserName")}} @endif
         </h1>
         <input type="text" id = "txtCookie" name = "txtCookie"><button> {{__('Save Cookie') }}</button>
     </form>
-     <div>
+     <div>            <br><br>
             <div>
                 <h1>
                     Hello
@@ -36,6 +42,7 @@
                     @endif
                 </h1>
             </div>
+
             <div>
                 <form method="POST" action="saveSession">
                     @csrf
@@ -47,7 +54,7 @@
                 </form>
             </div>
     </div>
-    <div>
+    <div><br><br>
         <form method="POST" action="saveAvatar"  enctype="multipart/form-data" >
             @csrf
             <label for="avatarFile">@lang('Choose your picture')</label>

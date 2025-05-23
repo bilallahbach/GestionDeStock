@@ -115,14 +115,7 @@ function validateEmail(input) {
     }
 }
 
-function validatePassword(input) {
-    const pattern = /^(?=.*[a-z])(?=.*\d)(?=.*[!@#\$%\^\&*\)\(+=._-]).{8,}$/;
-    if (!pattern.test(input.value.trim())) {
-        showError(input, 'Password must be 8+ chars, 1 lowercase, 1 number, 1 special.');
-    } else {
-        clearError(input);
-    }
-}
+
 
 function validateConfirmPassword(input) {
     const passwordInput = document.querySelector('input[name="password"]');

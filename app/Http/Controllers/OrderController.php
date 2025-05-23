@@ -79,9 +79,8 @@ public function searchCustomers($searchTerm)
         ];
     });
 
-    $html = view('orders._customers', ['customers' => $customers])->render();
-
-    return response()->json(['html' => $html]);
+    return response()->json($customers);
 }
+
 
 }
