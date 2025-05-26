@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Mpdf\Mpdf;
+use App\Models\User;
 use App\Models\Store;
 use App\Models\Product;
 use App\Models\Category;
@@ -110,6 +112,19 @@ class ProductController extends Controller
         return back()->with('success', 'Products imported successfully.');
     }
 
+    public function print()
+    {
+        $user = User::find(1); // Get the authenticated user
+        $products = Product::with(['category', 'supplier', 'stock'])->get();
+        $data = [
+            'products' => $products,
+            'user' => $user // Pass the user to the view
+        ];
 
+        $mpdf = new Mpdf();
+        $html = view('products.print_pdf', $data)->render();
+        $mpdf->WriteHTML($html);
+        return $mpdf->Output('products.pdf', 'I'); // 'I' for inline display
+    }
 
 }

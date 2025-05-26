@@ -79,10 +79,9 @@ Route::get('/orderV', [OrderController::class, 'index2'])->name('orders.index2')
 
 Route::get('/products-by-category', [CategoryController::class, 'productsByCategory'])->name('products.by.category');
 Route::get('/products-by-category/{category}', [CategoryController::class, 'getProductsByCategory'])->name('products.filter.by.category');
-
+Route::get('/products/print', [ProductController::class, 'print'])->name('products.print');
 Route::get('/products-by-store', [ProductController::class, 'productsByStore'])->name('products.by.store');
 Route::get('/api/products-by-store/{store}', [ProductController::class, 'getProductsByStore'])->name('api.products.by.store');
-
 Route::get('products-export', [ProductController::class, 'export'])->name('products.export');
 Route::post('products-import', [ProductController::class, 'import'])->name('products.import');
 

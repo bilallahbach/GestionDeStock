@@ -22,6 +22,8 @@
                     data-bs-target="#importProductModal">
                     <i class="fa fa-file"></i> Import
                 </button>
+                <a class="btn btn-info" href="{{ route('products.print') }}" target="_blank"><i class="fa fa-print"></i>
+                    Print</a>
                 @include('products.miniV.import-modal')
                 <a href="{{ route('dashboard') }}" class="btn btn-secondary d-flex align-items-center gap-2">
                     <svg class="bi" width="16" height="16" fill="currentColor">
